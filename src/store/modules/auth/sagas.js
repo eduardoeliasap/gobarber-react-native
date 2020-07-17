@@ -72,7 +72,7 @@ export function setToken({ payload }) {
 }
 
 export function singOut() {
-  history.push('/');
+  // history.push('/');
 }
 
 // Always that I listen @auth/SIGN_IN_REQUEST I call the signIn function

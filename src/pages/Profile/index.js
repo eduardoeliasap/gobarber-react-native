@@ -1,12 +1,13 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Text } from 'react-native';
+import { Text, Alert } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import Background from '~/components/Background';
+import { signOut } from '~/store/modules/auth/actions';
 import { updateProfileRequest } from '~/store/modules/user/actions';
 
-import { Container, Title, Separator, Form, FormInput, SignLink } from './styles';
+import { Container, Title, Separator, Form, FormInput, SignLink, LogoutButton } from './styles';
 
 export default function Profile() {
   const dispatch = useDispatch();
@@ -40,6 +41,10 @@ export default function Profile() {
       password,
       confirmPassword
     }))
+  }
+
+  function handleLogout() {
+    dispatch(signOut());
   }
 
   return (
@@ -108,6 +113,8 @@ export default function Profile() {
           />
 
           <SignLink onPress={handleSubmit}><Text>Atualizar perfil</Text></SignLink>
+          <SignLink onPress={handleLogout}><Text>Sair do GoBarber</Text></SignLink>
+          {/* <LogoutButton onPress={handleLogout}>Sair do GoBarber</LogoutButton> */}
         </Form>
       </Container>
     </Background>

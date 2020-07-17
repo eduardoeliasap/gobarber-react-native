@@ -37,3 +37,8 @@ export const SubmitButton = styled(Button)`
 `;
 
 export const SignLink = styled.TouchableOpacity``;
+
+export const LogoutButton = styled(Button)`
+  margin-top: 10px;
+  background: #f64c75;
+`;
