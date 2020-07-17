@@ -65,9 +65,7 @@ export default function SignUp({ navigation }) {
             onChangeText={setPassword}
           />
 
-          <SignLink loading={loading} onPress={handleSubmit}>
-            <Text>Criar conta</Text>
-          </SignLink>
+          <SignLink loading={loading} onPress={handleSubmit}><SubmitButton>Criar conta</SubmitButton></SignLink>
         </Form>
 
         <SignLink onPress={() => {navigation.navigate('SignIn')}}>

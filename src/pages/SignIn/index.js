@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { Text, Image, Alert, Button } from 'react-native';
+import { Text, Image } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 
 import logo from '~/assets/logo.png';
@@ -50,8 +50,7 @@ export default function SignIn({ navigation }) {
             onChangeText={setPassword}
           />
 
-          <SignLink loading={loading} onPress={handleSubmit}><Text>Acessar</Text></SignLink>
-          {/* <SubmitButton loading={loading} onPress={handleSubmit}>Acessar</SubmitButton> */}
+          <SignLink loading={loading} onPress={handleSubmit}><SubmitButton>Acessar</SubmitButton></SignLink>
         </Form>
 
         <SignLink onPress={() => {navigation.navigate('SignUp')}}>

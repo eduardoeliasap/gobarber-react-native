@@ -1,5 +1,5 @@
 import React from 'react';
-import { ActivityIndicator } from 'react-native'; // Para adionar um sinal de loading
+import { Activityindicator } from 'react-native'; // Para adionar um sinal de loading
 import PropTypes from 'prop-types';
 
 import { Container, Text } from './styles';
@@ -13,7 +13,7 @@ export default function Button({ children, loading, ...rest }) {
     <Container {...rest}>
       {/* Apresento o ActivityIndicator se existir um loading, senão apresento Text */}
       {loading ? (
-        <ActivityIndicator size="small" color="#FFF" />
+        <Activityindicator size="small" color="#FFF" />
       ) : (
       <Text>{children}</Text>
       )}

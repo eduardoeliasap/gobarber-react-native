@@ -7,7 +7,7 @@ import Background from '~/components/Background';
 import { signOut } from '~/store/modules/auth/actions';
 import { updateProfileRequest } from '~/store/modules/user/actions';
 
-import { Container, Title, Separator, Form, FormInput, SignLink, LogoutButton } from './styles';
+import { Container, Title, Separator, Form, FormInput, SignLink, SubmitButton, LogoutButton } from './styles';
 
 export default function Profile() {
   const dispatch = useDispatch();
@@ -112,9 +112,8 @@ export default function Profile() {
             onChangeText={setConfirmPassword}
           />
 
-          <SignLink onPress={handleSubmit}><Text>Atualizar perfil</Text></SignLink>
-          <SignLink onPress={handleLogout}><Text>Sair do GoBarber</Text></SignLink>
-          {/* <LogoutButton onPress={handleLogout}>Sair do GoBarber</LogoutButton> */}
+          <SignLink onPress={handleSubmit}><SubmitButton>Atualizar perfil</SubmitButton></SignLink>
+          <SignLink onPress={handleLogout}><LogoutButton>Sair do GoBarber</LogoutButton></SignLink>
         </Form>
       </Container>
     </Background>
