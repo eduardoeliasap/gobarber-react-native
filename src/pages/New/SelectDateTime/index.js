@@ -14,7 +14,7 @@ export default function SelectDateTime({ navigation }) {
   const [date, setDate] = useState(new Date());
   const [hours, setHours] = useState([]);
 
-  // Estes dados estão vindo da tela anterior via parametros
+  // These data are coming from the previous navigation via parameters
   const provider = navigation.getParam('provider');
 
   useEffect(() => {
@@ -26,6 +26,7 @@ export default function SelectDateTime({ navigation }) {
       });
 
       setHours(response.data)
+      // console.log(response.data);
     }
 
     loadAvailable();
@@ -46,9 +47,12 @@ export default function SelectDateTime({ navigation }) {
 
         <HourList
           data={hours}
+          extraData={date}
           keyExtractor={item => item.time}
           renderItem={({ item }) => (
-            <Hour onPress={() => handleSelectHour(item.value)} enable={item.available}>
+            // *** PENDENCY ***
+            // The button remains clickable even with items.available false
+            <Hour onPress={() => handleSelectHour(item.value)} enabled={item.available}>
               <Title>{item.time}</Title>
             </Hour>
           )}/>

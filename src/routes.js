@@ -45,13 +45,14 @@ export default (signedIn = false) => createAppContainer(createSwitchNavigator({
           tabBarVisible: false, // It will clear the status bar when entering these routes. It is necessary to force the user to not navigate routes outside the New routes
           tabBarLabel: 'Agendar',
           tabBarIcon: (
-            <Icon name='add-circle-outline' size={20} color="rgba(255, 255, 255, 0.1)" />
+            <Icon name='add-circle-outline' size={20} color="rgba(255, 255, 255, 0.6)" />
           )
         }
       },
       Profile,
     },
     {
+      resetOnBlur: true,
       tabBarOptions: {
         keyboardHidesTabBar: true,
         activeTintColor: '#FFF',
